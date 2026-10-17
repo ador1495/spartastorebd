@@ -1,0 +1,605 @@
+/* ==========================================
+   RESET & BASE STYLES
+   ========================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   HEADER & NAVIGATION
+   ========================================== */
+
+.site-header,
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container,
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-header h1,
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Cart Button */
+.cart-btn,
+.cart-button {
+  background-color: #111827;
+  color: #ffffff;
+  border: none;
+  padding: 10px 19px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.cart-btn:hover,
+.cart-button:hover {
+  background-color: #1f2937;
+}
+
+/* ==========================================
+   MAIN CONTAINER
+   ========================================== */
+
+.container,
+.main-content {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  flex: 1;
+  padding: 32px 0;
+}
+
+.container h2,
+.main-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #111827;
+}
+
+/* ==========================================
+   PRODUCT GRID
+   ========================================== */
+
+.product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 32px !important;
+  width: 100%;
+}
+
+/* ==========================================
+   PRODUCT CARDS
+   ========================================== */
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: #f3f4f6;
+}
+
+.product-card h3 {
+  padding: 20px 20px 8px 20px;
+  font-size: 19px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.product-card .description {
+  padding: 0 20px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.4;
+  flex: 1;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 16px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Add to Cart Button */
+.add-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+footer,
+.site-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 24px 0;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* ==========================================
+   HEADER AUTHENTICATION WIDGET
+   ========================================== */
+
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-google-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.header-google-btn:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+.header-user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f3f4f6;
+  padding: 5px 12px 5px 6px;
+  border-radius: 9999px;
+  border: 1px solid #e5e7eb;
+}
+
+.header-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid #ffffff;
+  background-color: #e5e7eb;
+}
+
+.header-user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  max-width: 130px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-signout-btn {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 3px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.header-signout-btn:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+}
+
+/* ==========================================
+   GOOGLE AUTH & ACCOUNT POP-UP (REVIEWS SECTION)
+   ========================================== */
+
+.review-auth-container {
+  margin-bottom: 14px;
+}
+
+/* Prompt Box (Logged Out State) */
+.google-signin-prompt-box {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.google-signin-prompt-box:hover {
+  border-color: #3b82f6;
+  background: #f0f7ff;
+}
+
+.google-signin-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #1f2937;
+  border: 1.5px solid #d1d5db;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  max-width: 320px;
+}
+
+.google-signin-action-btn:hover {
+  background: #ffffff;
+  border-color: #4285f4;
+  box-shadow: 0 4px 12px rgba(66, 133, 244, 0.18);
+  transform: translateY(-1px);
+}
+
+.google-signin-action-btn:active {
+  transform: translateY(0);
+}
+
+.signin-subtext {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Pop-up Google Account Info Card (Logged In State) */
+.google-account-popup-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #f0fdf4 0%, #f8fafc 100%);
+  border: 1.5px solid #86efac;
+  border-radius: 10px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.08);
+  animation: popIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.google-user-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.user-avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-user-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #22c55e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.user-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #22c55e;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.google-user-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.user-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.posting-as-label {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.google-account-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.google-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #15803d;
+  background: #dcfce7;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  border: 1px solid #bbf7d0;
+}
+
+.google-account-email {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.switch-account-btn {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.switch-account-btn:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #dc2626;
+}
+
+.auth-alert {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.4;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.verified-review-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  padding: 1px 7px;
+  border-radius: 9999px;
+}
+
+/* ==========================================
+   RATING SUMMARY & BREAKDOWN BARS (GOOGLE PLAY STYLE)
+   ========================================== */
+
+.rating-summary-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 10px 0 16px 0;
+  width: 100%;
+}
+
+.rating-summary-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 130px;
+}
+
+.rating-average-score {
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1;
+  color: #202124;
+  letter-spacing: -2px;
+  margin-bottom: 8px;
+}
+
+.rating-stars-container {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin-bottom: 8px;
+}
+
+.rating-stars-track {
+  display: flex;
+  gap: 3px;
+}
+
+.rating-stars-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  gap: 3px;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.star-icon {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
+.rating-total-count {
+  font-size: 13px;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+.rating-summary-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  max-width: 600px;
+}
+
+.rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bar-label {
+  font-size: 13px;
+  color: #5f6368;
+  font-weight: 500;
+  width: 12px;
+  text-align: right;
+  user-select: none;
+}
+
+.bar-track {
+  flex: 1;
+  height: 10px;
+  background-color: #e8eaed;
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar-fill {
+  height: 100%;
+  background-color: #01875f;
+  border-radius: 9999px;
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rating-divider {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 20px 0 26px 0;
+}
+
+@media (max-width: 640px) {
+  .rating-summary-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .rating-summary-right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .google-account-popup-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .switch-account-btn {
+    align-self: flex-end;
+  }
+  .header-user-name {
+    display: none;
+  }
+}
+

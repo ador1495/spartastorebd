@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static E-Commerce Store</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Snipcart CSS -->
+  <link rel="preconnect" href="https://app.snipcart.com">
+  <link rel="preconnect" href="https://cdn.snipcart.com">
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.css" />
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="site-header">
+    <div class="container header-container">
+      <h1>My Static Store</h1>
+      
+      <div class="header-right-actions">
+        <!-- Google Auth Header Widget -->
+        <div id="headerAuthSection">
+          <button type="button" id="headerGoogleSignInBtn" class="header-google-btn" title="Sign in with Google">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+              <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+            </svg>
+            <span>Sign in</span>
+          </button>
+          
+          <div id="headerUserProfile" class="header-user-profile" style="display: none;">
+            <img id="headerUserAvatar" src="" alt="Avatar" class="header-avatar" />
+            <span id="headerUserName" class="header-user-name"></span>
+            <button type="button" id="headerSignOutBtn" class="header-signout-btn" title="Sign out">Sign out</button>
+          </div>
+        </div>
+
+        <!-- Cart Button / Summary -->
+        <button class="snipcart-checkout cart-button">
+          🛒 Cart: <span class="snipcart-items-count">0</span> items
+          (<span class="snipcart-total-price">$0.00</span>)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content / Product Catalog -->
+  <main class="container main-content">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop" alt="Classic White Tee">
+        <h3>Classic White Tee</h3>
+        <p class="description">100% organic cotton everyday essential t-shirt.</p>
+        <div class="product-footer">
+          <span class="price">$25.00</span>
+          <button class="snipcart-add-item add-btn"
+            data-item-id="tee-001"
+            data-item-price="25.00"
+            data-item-url="/"
+            data-item-name="Classic White Tee"
+            data-item-description="100% organic cotton everyday essential t-shirt."
+            data-item-image="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500&auto=format&fit=crop">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop" alt="Red Running Shoes">
+        <h3>Red Sport Runners</h3>
+        <p class="description">Lightweight running shoes built for maximum comfort.</p>
+        <div class="product-footer">
+          <span class="price">$85.00</span>
+          <button class="snipcart-add-item add-btn"
+            data-item-id="shoes-002"
+            data-item-price="85.00"
+            data-item-url="/"
+            data-item-name="Red Sport Runners"
+            data-item-description="Lightweight running shoes built for maximum comfort."
+            data-item-image="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Wireless Headphones">
+        <h3>Wireless Headphones</h3>
+        <p class="description">High-fidelity sound with active noise cancellation.</p>
+        <div class="product-footer">
+          <span class="price">$120.00</span>
+          <button class="snipcart-add-item add-btn"
+            data-item-id="audio-003"
+            data-item-price="120.00"
+            data-item-url="/"
+            data-item-name="Wireless Headphones"
+            data-item-description="High-fidelity sound with active noise cancellation."
+            data-item-image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <section class="reviews-section" style="margin-top: 50px; background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #e5e7eb;">
+      <h2>Global Customer Reviews</h2>
+      
+      <!-- Total Review Summary & Breakdown (Google Play Style) -->
+      <div id="ratingSummaryCard" class="rating-summary-card">
+        <!-- Left: Average Score, Stars & Count -->
+        <div class="rating-summary-left">
+          <div id="ratingAverageScore" class="rating-average-score">0.0</div>
+          <div class="rating-stars-container">
+            <!-- Background empty stars -->
+            <div class="rating-stars-track">
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#e8eaed" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#e8eaed" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#e8eaed" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#e8eaed" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#e8eaed" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            <!-- Foreground filled green stars clipped dynamically by width % -->
+            <div id="ratingStarsFill" class="rating-stars-fill" style="width: 0%;">
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#01875f" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#01875f" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#01875f" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#01875f" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <svg class="star-icon" viewBox="0 0 24 24"><path fill="#01875f" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+          </div>
+          <div id="ratingTotalCount" class="rating-total-count">0 reviews</div>
+        </div>
+
+        <!-- Right: 5 to 1 Star Progress Breakdown Bars -->
+        <div class="rating-summary-right">
+          <div class="rating-bar-row">
+            <span class="bar-label">5</span>
+            <div class="bar-track">
+              <div id="bar5" class="bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-label">4</span>
+            <div class="bar-track">
+              <div id="bar4" class="bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-label">3</span>
+            <div class="bar-track">
+              <div id="bar3" class="bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-label">2</span>
+            <div class="bar-track">
+              <div id="bar2" class="bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div class="rating-bar-row">
+            <span class="bar-label">1</span>
+            <div class="bar-track">
+              <div id="bar1" class="bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="rating-divider">
+
+      <!-- Submission Form -->
+      <form id="globalReviewForm" style="margin-bottom: 30px;">
+        
+        <!-- Google Authentication in place of raw text input -->
+        <div id="reviewAuthContainer" class="review-auth-container">
+          <!-- Logged Out: Sign in with Google Button -->
+          <div id="reviewLoggedOutBox" class="google-signin-prompt-box">
+            <button type="button" id="googleSignInBtn" class="google-signin-action-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/>
+                <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"/>
+                <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/>
+                <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+              </svg>
+              <span>Sign in with Google</span>
+            </button>
+            <p class="signin-subtext">Sign in with your Google account to automatically pop up your name and submit a verified review.</p>
+          </div>
+
+          <!-- Logged In: Automatically Pop up Google Account Name Card -->
+          <div id="reviewLoggedInBox" class="google-account-popup-card" style="display: none;">
+            <div class="google-user-info">
+              <div class="user-avatar-container">
+                <img id="reviewUserAvatar" src="" alt="Google Profile" class="google-user-avatar" />
+                <span class="user-status-dot" title="Active"></span>
+              </div>
+              <div class="google-user-meta">
+                <div class="user-title-row">
+                  <span class="posting-as-label">Posting review as:</span>
+                  <strong id="googleAccountName" class="google-account-name">Google User</strong>
+                  <span class="google-verified-badge" title="Authenticated with Google">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    Google Account
+                  </span>
+                </div>
+                <span id="googleAccountEmail" class="google-account-email">user@gmail.com</span>
+              </div>
+            </div>
+
+            <button type="button" id="googleSignOutBtn" class="switch-account-btn" title="Sign out or switch Google account">
+              Sign out
+            </button>
+
+            <!-- Hidden input maintaining seamless compatibility with review form logic -->
+            <input type="hidden" id="gName" name="gName" required>
+          </div>
+
+          <!-- Friendly auth alerts/notifications -->
+          <div id="authAlert" class="auth-alert" style="display: none;"></div>
+        </div>
+
+        <select id="gRating" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #d1d5db; border-radius: 6px;">
+          <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐ (5/5)</option>
+          <option value="⭐⭐⭐⭐">⭐⭐⭐⭐ (4/5)</option>
+          <option value="⭐⭐⭐">⭐⭐⭐ (3/5)</option>
+          <option value="⭐⭐">⭐⭐ (2/5)</option>
+          <option value="⭐">⭐ (1/5)</option>
+        </select>
+        <textarea id="gText" rows="3" required placeholder="Write your review..." style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #d1d5db; border-radius: 6px;"></textarea>
+        <button type="submit" id="submitReviewBtn" style="background-color: #2563eb; color: #fff; border: none; padding: 10px 20px; font-weight: 600; border-radius: 6px; cursor: pointer; transition: background-color 0.2s ease;">Post Public Review</button>
+      </form>
+
+      <!-- Live Global Reviews Grid -->
+      <div id="globalReviewsContainer">
+        <p style="color: #6b7280;">Loading reviews from cloud...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 My Static Store. Powered by GitHub Pages & Snipcart.</p>
+    </div>
+  </footer>
+
+  <!-- Snipcart Hidden DIV and JavaScript Setup -->
+  <div hidden id="snipcart" data-api-key="NDU5NWE0ZTItMWQyNy00M2Y2LWEwZWEtMTY4ZDllMmJlZWE1NjM5Mjc4Mjg5MjQ5MzgwNTc5"></div>
+  <script async src="https://cdn.snipcart.com/themes/v3.2.2/default/snipcart.js"></script>
+
+  <!-- Custom JavaScript File -->
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
